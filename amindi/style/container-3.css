@@ -1,0 +1,140 @@
+.container-3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 570px;
+  height: 50px;
+  margin: 0 auto;
+  position: relative;
+}
+.container-3 .choose-city, .container-3 .search-city {
+  background-color: rgba(0, 0, 0, 0.199);
+  font-size: 12px;
+  height: 30px;
+  width: 45%;
+  padding-left: 10px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  position: relative;
+}
+.container-3 .choose-city {
+  cursor: pointer;
+}
+.container-3 .arrow {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid #fff;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 15px;
+  right: 7px;
+  cursor: pointer;
+}
+.container-3 .search-input {
+  width: 100%;
+  height: 100%;
+  color: white;
+  outline: none;
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+}
+.container-3 ::-moz-placeholder {
+  color: white;
+  opacity: 1;
+  font-size: 12px;
+  font-family: geofont;
+}
+.container-3 :-ms-input-placeholder {
+  color: white;
+  opacity: 1;
+  font-size: 12px;
+  font-family: geofont;
+}
+.container-3 ::placeholder {
+  color: white;
+  opacity: 1;
+  font-size: 12px;
+  font-family: geofont;
+}
+.container-3 img {
+  padding: 5px;
+  position: absolute;
+  transform: translateY(-50%);
+  right: 0;
+  top: 50%;
+  cursor: pointer;
+}
+.container-3 .city-list {
+  position: absolute;
+  width: 100%;
+  top: 44px;
+  left: 0;
+  background-color: rgb(33, 115, 236);
+  z-index: 1001;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 10px;
+  height: 0;
+  overflow: hidden;
+}
+.container-3 .city-list .list {
+  padding: 0 10%;
+  text-transform: uppercase;
+  font-family: geofont;
+  line-height: 30px;
+  text-align: center;
+  width: 35%;
+  padding: 0 8%;
+  margin: 0 5%;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+  color: white;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  cursor: pointer;
+}
+.container-3 .city-list .list:hover {
+  background-color: blue;
+}
+.container-3 .open {
+  height: auto;
+}
+
+@media only screen and (min-width: 768px) {
+  .container-3 {
+    top: 45px;
+    left: -44px;
+    width: 282px;
+  }
+  .container-3 .choose-city, .container-3 .search-city {
+    background-color: rgb(33, 115, 236);
+  }
+  .container-3 .city-list {
+    left: -2px;
+    width: 561px;
+  }
+}
+@media only screen and (min-width: 990px) {
+  .container-3 {
+    left: -100px;
+  }
+  .container-3 .city-list {
+    left: -2px;
+    width: 728px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .container-3 {
+    left: -173px;
+  }
+  .container-3 .city-list {
+    width: 946px;
+  }
+}/*# sourceMappingURL=container-3.css.map */

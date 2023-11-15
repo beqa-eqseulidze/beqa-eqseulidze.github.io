@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>amindi</title>
+        <link rel="icon" type="image/x-icon" href="./img/header-logo.png">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wght@8..144,400;8..144,500;8..144,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./style/style.css">
+        <!-- leafelet css -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
+        <!-- axios  -->
+        <script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+        <!-- leafelet js-->
+        <script defer src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+        
+        <script defer type="module"  src="./js/main.js"></script>        
+        <!-- <script  defer src="./js/map.js"></script> -->
+        
+</head>
+<body>  
+ <div class="loader">
+   <div class="circle"></div>
+</div> 
+<div class="container-1">
+    <div class="navbar">        
+            <img src="./img/header-logo.png" alt="">        
+        <select class="choose-lan" name="language">
+            <option value="GE"> 🇬🇪 ქართული</option>
+            <option value="GB">🇬🇧 ENGLISH</option>
+        </select>         
+        <div class="burger">
+            <button class="burger-btn" >
+                <span class="first"></span> 
+                <span class="second"></span>    
+                <span class="therd"></span>    
+            </button>
+        </div>
+
+        <div class="menu">
+            <p> <a href=""> ამინდის პროგნოზი</a></p>
+            <p> <a href=""> სიახლეები</a></p>
+            <p> <a href=""> ჯანმრთელობა</a></p>
+            <p> <a href=""> რადიო</a></p>
+            <p class="info"> <a href=""> 
+             სასარგებლო ინფორმაცია
+            </a></p>
+            <p> <a href=""> რეკლამა</a></p>
+            
+            <ul class="list">
+              <li> <a href=""> მსოფლიო დრო</a></li>
+              <li> <a href=""> საქართველოს დღესასწაულები</a></li>
+              <li> <a href=""> ვალუტა</a></li>
+              <li> <a href=""> ჰოროსკოპი</a></li>      
+            </ul>
+        </div>
+    </div>                        
+</div>   
+<!-- top reklam section -->
+<div class="container-2">
+    <div class="banner-top">
+        <div id="parent" style="position: relative; width:100%; height:100%">
+            <style>
+                #rekla{
+                     position: absolute;
+                     transform:translateY(-50%); 
+                     top:50%;
+                     display: flex;                    
+                     font-size: 30px;
+                     color:white;  
+                     z-index:100;                  
+                }
+                #rekla .text{
+                    min-width: 300px;
+                    height: 35px;                    
+                    display: block;
+                    width: 350px;
+                    margin-right: 100px;
+                }
+            </style>
+            <div id="rekla" ></div>
+                 
+              <script>
+        const reklama=document.querySelector('#rekla')
+        function createElm(n){
+            for (let i=0; i<n;i++){               
+                reklama.innerHTML+=`<p class='text'>თქვენი რეკლამა</p>`          
+            }
+        }
+        createElm(5)
+        let start=0;
+        let color=(Math.ceil(Math.random()))*200+50;
+       //  muving text code 
+        setInterval(()=>{           
+            if(start>=-450){
+                start-=0.5
+                reklama.style.left=start+'px'                
+            }else start=0;},2)
+
+      setInterval(() => {
+        reklama.style.color=`rgba(${Math.floor(Math.random()*200)+50},${Math.floor(Math.random()*200)+50},${Math.floor(Math.random()*200)+50})`
+      }, 1000);           
+    
+    </script> 
+        </div>       
+    </div> 
+   
+</div>
+
+
+<!-- start cotainer-3 -->
+<div class="container-3">    
+    <div class="choose-city">
+        აირჩიე ქალაქი
+     <span class="arrow"></span>
+    </div>
+    <div class="city-list">
+        <!-- <span class="list"> <span>Tbilisi</span><span>21</span> </span> -->
+    </div>
+    <div class="search-city">
+        <input class="search-input"  type="text" name="" id="search-input" placeholder="მოძებნე ქალაქი" >
+        <img id="search" src="./img/search.png" alt="">
+    </div>
+    
+        
+</div>
+<!-- end container-3 -->
+
+<main>
+<!-- start container-4 -->
+<div class="container-4">
+    <div class="curent-forcast">
+        <!-- <h2>თბილისი</h2>
+        <p class="date"> <span>კვირა,</span> <span>20 ნოემბერი</span></p>
+        <p>15:52:42</p>
+        <div class="forcast">
+            <img src="./img/sun.png"  alt="sun">
+            <p class="degree">21<sup>o</sup> </p>
+        </div>
+        <p class="description">მზიანი</p> -->
+    </div>
+    <div class="next-hours-focast">
+        <h3>მომდევნო 24 საათის ამინდი <br>საათების მიხედვით</h3>
+        <ul class="hourly-focast-list">
+             <!-- <li> 20 საათი <img src="./img/sun.png" width="32" height="32" alt="sun" > <span>21<sup>o</sup></span> </li> -->
+        </ul>
+        <button class="see-all">იხილეთ სრულად</button>
+    </div>
+    <div class="wind-focast">
+        <div class="animation-fun" >
+            <div class="first-fun"></div>
+            <div class="last-fun"></div>            
+        </div>
+        <!-- <div>
+            <h3>ქარი და წნევა</h3>
+            <p>ქარის სიჩქარე:</p>
+            <p>28 kbh, NW</p>
+            <p>წნევა:</p>
+            <p>102.30 kpa</p>
+        </div>         -->
+    </div>
+    <div class="additional-info">
+        <!-- <p>ტემპერატურის მგრძნომბელობა: <span>22<sup>o</sup> </span></p>
+        <p>ქარის მგრძნონელობა: <span>22<sup>o</sup> </span></p>
+        <p>ტენიანობა: <span>33%</span></p>
+        <p>ხილვადობა: <span>16 km </span></p> -->
+    </div>
+    <div class="currency">
+        <p><span> </span><span>18 ნოე</span> <span>19 ნოე</span> <span></span></p>
+        <p><span>1 USD </span><span>2.7227</span> <span>2.7188</span> <span>-0.31%</span></p>
+        <p><span>1 EUR</span><span>2.8107</span> <span>2.8214</span> <span>0.02</span></p>
+        <p><span> 100 RUB </span><span>4.5119</span> <span>4.4986</span> <span>-0.47%</span></p>
+        <button>ყველა ვალუტა</button>
+    </div>
+
+</div>
+<!-- end container-4 -->
+
+<!-- start container-5 -->
+<div class="container-5">
+    <div class="search-bar"></div>
+    <div class="parent">
+        <div class="five-days-hourly-weather" >
+            <p class="daily active">ამინდი დღეების მიხედვით</p>
+            <p class="hurly">ამინდი ხუთი დღის საათობრივი</p>
+        </div>
+        <div class="daily-weather">
+            <h3 class="daily-weather-title">ამინდი დღეების მიხედვით</h3>
+            <div class="cards">
+                <!-- <div class="card">
+                    <p>კვირა</p>
+                    <p>04 დეკემბერი</p>
+                    <div>
+                        <img src="./img/sun.png" alt="sun">
+                    </div>
+                    <p class="degree" ><span>-7<sup>o</sup></span> <span>-1<sup>o</sup>
+    
+                    </span></p>
+                </div>   -->
+            </div>
+        </div>           
+       
+        <p  style="margin:10px 0; text-align:center;" >აირჩიე რუკაზე</p>
+        <div id="map"></div>
+        <div class="video">
+            <video width="100%" autoplay controls muted>
+                <source src="./img/droni-2-291539.mp4" type="video/mp4">
+                <source src="./img/droni-2-29153.ogg" type="video/ogg">
+              Your browser does not support the video tag.
+              </video>
+        </div>
+    </div>
+    
+</div>
+<!-- end container-5 -->
+</main>
+
+</body>
+</html>

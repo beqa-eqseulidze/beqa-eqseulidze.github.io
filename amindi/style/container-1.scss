@@ -1,0 +1,262 @@
+@use "./font.scss";
+
+
+.container-1{
+    width:100%;
+    height:50px;
+    background-color: black;
+    display: flex;
+    justify-content:center;
+
+    .navbar{
+        width:100%;
+        height:100%;  
+        // font-size:15px;
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position:relative;
+        background-color: rgba(25,55,92,.5);
+        background: rgba(25,55,92,.75);
+        background-position: 12px -253px;    
+        
+        img{
+            height:80%;
+            margin-left:5%;
+            cursor: pointer;
+        }        
+        .choose-lan{   
+            color:white;     
+            width:145px;
+            height:30px;        
+            background-color: rgb(33, 115, 236);
+            border-radius: 5px;
+            outline: none;
+            border: 1px solid black;
+            // position:relative;
+            position:absolute;
+            right:20%;
+            top:10px;
+            // display: flex;
+            // flex-direction: column;
+            // justify-content: center;
+            // overflow: hidden;             
+            
+            option{
+                width:100%;
+                height:30px;                
+                // font-size: 12px;
+                // display: flex;
+                // align-items: center;
+                cursor: pointer;
+
+                span{
+                    margin-top: 3px;
+                }
+            }
+            // option:hover{
+            //     transform: scale(1.1);
+            // }
+            // p:last-child{    
+            //     display:none;
+            // }
+    
+            img{
+                width:22px;
+                height: 14px;
+                margin:0 10px;
+            } 
+        }
+    
+        // .choose-lan:hover{
+        //     height: 60px;    
+        //     z-index: 1;   
+        // }
+    
+        // .choose-lan:hover p:last-child{
+        //     display:flex;
+        // }
+        
+        .arrow{
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 6px solid #fff;
+            position:absolute;
+            transform:translate(-50%,-50%);
+            top:15px;
+            right:7px;
+        }
+        .burger{
+            margin-right:5%;
+            display: flex;
+            justify-content:center;
+            align-items: center;  
+         }
+    
+        button{
+            width:30px;
+            height:25px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            background: none;
+            border: none;
+    
+            span{
+                width:70%;
+                height:3px;
+                background-color: rgb(143, 135, 135);
+                border-radius:10%;
+            }
+        }
+    
+      
+        .menu{
+            width:100%;
+            // font-size:0.9rem;
+            position: absolute;
+            z-index:997;
+            top:50px;
+            left:0;
+            background: white;   
+            height: 0px;
+            overflow: hidden;
+            transition:0.5s;
+            
+            p{
+                padding:10px 10px;
+            }
+            p:hover{
+                background: rgba(25,55,92,1);
+                color:white;
+            }
+        }   
+        
+        .menu:hover{
+        //   overflow: visible;
+        }   
+    
+        .info{
+            position:relative;
+        }
+        .info:hover ~ .list{
+            display: block;
+        }       
+    
+        
+        .list{
+            display: none;
+            width:98%;
+            position:absolute;
+            z-index: 997;
+            top:180px;
+            right:0;
+            background: rgba(25,55,92,1);           
+            
+            li{
+                color:white;
+                padding:10px 10px;
+            }
+            li:hover {
+                background-color: white;
+                color: black;
+            }
+        }
+        .list:hover{
+            display: block;
+           
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+  .container-1{
+
+      .navbar{
+        position:initial;
+  
+          .choose-lan{
+            position: relative;
+            top: 175px;       
+            z-index: 100;
+            left: 163px;
+          }
+          .choose-lan:hover{
+            // top:191px;
+            // height: 60px;    
+            // z-index: 1;   
+        }
+      }
+  }
+}
+@media only screen and (min-width: 990px){
+    .container-1{ 
+       background:rgba(25,55,92,0.5);
+        .navbar{  
+            max-width:990px;         
+            img{
+                margin-left:25px;
+            }
+    
+            .burger{
+                display:none;
+            }
+    
+            .menu{          
+                position:initial; 
+                color:white;           
+                background: rgba(255, 255, 255, 0);   
+                height: 100% !important;
+                overflow: visible !important;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                margin-right:25px;
+                
+                p{
+                    cursor: pointer;
+                }
+                p:hover{
+                    background: rgb(13, 83, 168);
+                }
+    
+                .list{
+                    width:300px;
+                    top:44px;
+                    right:8%;
+                    background: rgba(25,55,92,1);
+                }
+                
+                li{
+                    text-align: center;
+                    cursor: pointer;
+                }
+            }
+           .choose-lan{           
+            left: 515px;
+            width:200px;
+          }
+          .choose-lan:hover{
+            // top:191px;
+            // height: 60px;    
+            // z-index: 1;   
+        }
+        }
+    }
+}
+
+@media only screen and (min-width: 1280px){
+    .container-1{       
+        .navbar{
+           max-width:1260px;
+           .choose-lan{
+            left:560px;
+          
+           }
+        }
+    }
+}
+            

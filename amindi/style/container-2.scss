@@ -1,0 +1,31 @@
+.container-2{
+    display:flex;
+    justify-content:center; 
+    width:100%;
+    height:80px;
+    .banner-top{
+        background:rgba(48, 116, 172, 0.521);        
+        width:100%;
+        height:100%;
+        overflow: hidden;
+     }
+}
+
+@media only screen and (min-width: 990px){
+   .container-2{
+        .banner-top{
+            max-width:990px;
+        }
+   }
+}
+
+@media only screen and (min-width: 1280px){
+    .container-2{
+        .banner-top{
+            max-width:1260px;
+        }
+   }
+   
+}
+            
+                   

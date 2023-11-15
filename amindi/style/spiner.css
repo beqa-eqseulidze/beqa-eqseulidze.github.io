@@ -1,0 +1,49 @@
+div.loader {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  z-index: 10000;
+}
+
+div.loader .circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border-top: 10px solid rgb(110, 172, 243);
+  border-left: 10px solid black;
+  border-right: 10px solid black;
+  border-bottom: 10px solid rgb(110, 172, 243);
+  z-index: 10001;
+  -webkit-animation-name: loader;
+          animation-name: loader;
+  -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s;
+  -webkit-animation-iteration-count: 100;
+          animation-iteration-count: 100;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+@-webkit-keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}/*# sourceMappingURL=spiner.css.map */

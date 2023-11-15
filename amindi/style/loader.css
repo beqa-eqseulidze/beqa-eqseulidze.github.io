@@ -1,0 +1,52 @@
+div.loader {
+  position: absolute;
+  display: none;
+  justify-content: center;
+  height: 300vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: white;
+  z-index: 100;
+}
+
+div.loader .circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border-top: 10px solid rgb(110, 172, 243);
+  border-left: 10px solid black;
+  border-right: 10px solid black;
+  border-bottom: 10px solid rgb(110, 172, 243);
+  position: absolute;
+  z-index: 101;
+  transform: translateX(-50%);
+  left: 48%;
+  top: 10%;
+  -webkit-animation-name: loader;
+          animation-name: loader;
+  -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s;
+  -webkit-animation-iteration-count: 100;
+          animation-iteration-count: 100;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+@-webkit-keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}/*# sourceMappingURL=loader.css.map */
